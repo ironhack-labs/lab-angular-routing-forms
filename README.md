@@ -42,8 +42,6 @@ Let's begin!
 
 For this lab you'll build a freelance profile website. This app will have the following pages:
 
-<br>
-
 ### Iteration 1 | Home Page
 
 The home page will be a personal introduction, should include a main photo (or a picture), some basic professional information, and a list of projects.
@@ -65,7 +63,7 @@ If the user tries to access a non-existing page a custom 404 Error page should b
 
 <br>
 
-You are free to work with the design, you can take a look for examples and inspiration you may need. But you have to use Angular material components in the design.
+***Note***: You are free to work with the design, you can take a look for examples and inspiration you may need. But you have to use Angular material components in the design.
 
 <br>
 
