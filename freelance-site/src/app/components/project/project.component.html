@@ -1,7 +1,14 @@
-<div>
-    <img [src]="project.projectPicture" [alt]="project.name" />
-    <h3>{{project.name}}</h3>
-    <p>{{project.year}}</p>
-    <p>{{project.type}}</p>
-    <p>{{project.description}}</p>
-</div>
+<mat-card class="project-card">
+
+    <img mat-card-image src="{{project.projectPicture}}" alt="{{project.name}}">
+    <mat-card-header>
+        <mat-card-title>{{project.name}}</mat-card-title>
+        <mat-card-subtitle>{{project.year}}, {{project.type}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <p>{{project.description}}</p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button>See more</button>
+    </mat-card-actions>
+<mat-card>

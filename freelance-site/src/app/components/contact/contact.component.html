@@ -1,1 +1,24 @@
-<p>contact works!</p>
+<div>
+    <form (ngSubmit)="onSubmit()" [formGroup]="registerForm">
+        <div>
+            <input type="text" placeholder="Name" formControlName="name">
+            <span class="error-msg" *ngIf="nameInput.invalid && nameInput.touched">
+                Please introduce a name
+            </span>
+        </div>
+        <div>
+            <input type="text" placeholder="Occupation" formControlName="occupation">
+        </div>
+        <div>
+            <input type="email" placeholder="Email" formControlName="email">
+        </div>
+        <div>
+            <input type="text" placeholder ="Subject" formControlName="subject">
+        </div>
+        <div>
+            <!-- this needs validations -->
+            <textarea></textarea> 
+        </div>
+        <button mat-stroked-button color="primary" type="submit" [disabled]="registerForm.invalid">Submit</button>
+    </form>
+</div>
