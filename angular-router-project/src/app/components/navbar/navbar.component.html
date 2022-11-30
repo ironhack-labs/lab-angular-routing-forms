@@ -8,6 +8,13 @@
         >Home</a
       >
     </li>
-    <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
+    <li>
+      <a
+        routerLink="/contact"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >Contact</a
+      >
+    </li>
   </ul>
 </nav>

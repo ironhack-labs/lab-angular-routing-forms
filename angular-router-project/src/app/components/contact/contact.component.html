@@ -1,24 +1,28 @@
 <app-navbar></app-navbar>
 
 <div class="container">
-  <form (ngSubmit)="onSubmit()">
+  <form (ngSubmit)="onSubmit()" [formGroup]="contactForm">
     <div>
-      <input type="text" placeholder="Name..." />
+      <input type="text" placeholder="Name..." formControlName="name" />
     </div>
     <div>
-      <input type="text" placeholder="Ocupation..." />
+      <input
+        type="text"
+        placeholder="Ocupation..."
+        formControlName="occupation"
+      />
     </div>
     <div>
-      <input type="text" placeholder="Email..." />
+      <input type="text" placeholder="Email..." formControlName="email" />
     </div>
     <div>
-      <input type="text" placeholder="Subject..." />
+      <input type="text" placeholder="Subject..." formControlName="subject" />
     </div>
     <div>
       <label for="content">Content:</label>
-      <textarea name="content"></textarea>
+      <textarea name="content" formControlName="content"></textarea>
     </div>
 
-    <button type="submit">Submit</button>
+    <button type="submit" [disabled]="contactForm.invalid">Submit</button>
   </form>
 </div>
