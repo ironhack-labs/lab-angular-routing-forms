@@ -1,1 +1,39 @@
-<p>contactpage works!</p>
+<div class="container">
+    <form (ngSubmit)="onSubmit()" [formGroup]="registerForm">
+        <!-- name, occupation, email, subject, and content -->
+        <div>
+            <input type="text" placeholder="Name..." formControlName="name" />
+            <p class="error-msg" * ngIf="nameInput.invalid && nameInput.touched">
+                Name error.....
+            </p>
+        </div>
+        <div>
+            <label>Occupation</label>
+            <input type="text" placeholder="Occupation..." formControlName="occupation" />
+            <p class="error-msg" * ngIf="occupationInput.invalid && occupationInput.touched">
+                Occupation error.....
+            </p>
+        </div>
+        <div>
+            <label>Email</label>
+            <input matInput type="text" placeholder="Email..." formControlName="email" />
+            <p class="error-msg" *ngIf="emailInput.invalid && emailInput.touched">
+                Email error.....
+            </p>
+        </div>
+        <div>
+            <input type="text" placeholder="Subject..." formControlName="subject" />
+            <p class="error-msg" * ngIf="subjectInput.invalid && subjectInput.touched">
+                Subject error.....
+            </p>
+        </div>
+        <div>
+            <textarea type="text" placeholder="Content..." formControlName="content" cols="30" rows="10"></textarea>
+            <p class="error-msg" * ngIf="contentInput.invalid && contentInput.touched">
+                Content error.....
+            </p>
+        </div>
+        <button type="submit">Submit</button>
+
+    </form>
+</div>
