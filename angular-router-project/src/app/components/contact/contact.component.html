@@ -4,6 +4,9 @@
   <form (ngSubmit)="onSubmit()" [formGroup]="contactForm">
     <div>
       <input type="text" placeholder="Name..." formControlName="name" />
+      <p class="error-msg" *ngIf="nameInput.invalid && nameInput.touched">
+        You have to provide a correct name...
+      </p>
     </div>
     <div>
       <input
@@ -14,15 +17,25 @@
     </div>
     <div>
       <input type="text" placeholder="Email..." formControlName="email" />
+      <p class="error-msg" *ngIf="emailInput.invalid && emailInput.touched">
+        You have to provide a correct email...
+      </p>
     </div>
     <div>
       <input type="text" placeholder="Subject..." formControlName="subject" />
+      <p class="error-msg" *ngIf="subjectInput.invalid && subjectInput.touched">
+        You have to provide a subject...
+      </p>
     </div>
     <div>
       <label for="content">Content:</label>
       <textarea name="content" formControlName="content"></textarea>
+      <p class="error-msg" *ngIf="contentInput.invalid && contentInput.touched">
+        Please send us a message between 10-255 characters
+      </p>
     </div>
 
     <button type="submit" [disabled]="contactForm.invalid">Submit</button>
+    <p>{{ message }}</p>
   </form>
 </div>

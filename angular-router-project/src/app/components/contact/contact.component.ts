@@ -14,6 +14,7 @@ export class ContactComponent implements OnInit {
   emailInput: FormControl;
   subjectInput: FormControl;
   contentInput: FormControl;
+  message: string;
 
   constructor(){
     this.nameInput = new FormControl("", Validators.required);
@@ -21,6 +22,7 @@ export class ContactComponent implements OnInit {
     this.emailInput = new FormControl("", [Validators.required, Validators.email]);
     this.subjectInput = new FormControl("", Validators.required);
     this.contentInput = new FormControl("",[Validators.required, Validators.minLength(10), Validators.maxLength(255)]);
+    this.message = ""
 
     this.contactForm = new FormGroup({
       name: this.nameInput,
@@ -35,6 +37,11 @@ export class ContactComponent implements OnInit {
   ngOnInit(): void {}
 
   onSubmit(): void{
- console.log('subimitting')
+    console.log('subimitting');
+    this.message = "Thanks for contacting us";
+    this.contactForm.reset();
+
+
+
   }
 }
