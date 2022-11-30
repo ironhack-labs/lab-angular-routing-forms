@@ -1,7 +1,13 @@
-.hero-section {
-    background-color: rgb(235, 235, 235);
-}
-
 .hero-img {
     width: 500px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding-bottom: 25px;
+    align-items: center;
+    justify-content: center;
 }

@@ -19,7 +19,7 @@ export class ContactComponent implements OnInit {
   constructor(){
 
     this.nameInput = new FormControl("", Validators.required);
-    this.occupationInput = new FormControl("", Validators.required);
+    this.occupationInput = new FormControl("");
     this.emailInput = new FormControl("", Validators.required);
     this.subjectInput = new FormControl("", Validators.required);
 
