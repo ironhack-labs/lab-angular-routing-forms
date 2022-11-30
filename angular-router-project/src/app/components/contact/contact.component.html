@@ -1,0 +1,68 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+  <form (ngSubmit)="onSubmit()" [formGroup]="contactForm">
+    <mat-form-field appearance="fill">
+      <label for="name">Name:</label>
+      <input
+        matInput
+        type="text"
+        placeholder="Name..."
+        formControlName="name"
+      />
+      <p class="error-msg" *ngIf="nameInput.invalid && nameInput.touched">
+        You have to provide a correct name...
+      </p>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <label for="occupation">Occupation:</label>
+      <input
+        matInput
+        type="text"
+        placeholder="Ocupation..."
+        formControlName="occupation"
+      />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <label for="email">Email:</label>
+      <input
+        matInput
+        type="text"
+        placeholder="Email..."
+        formControlName="email"
+      />
+      <p class="error-msg" *ngIf="emailInput.invalid && emailInput.touched">
+        You have to provide a correct email...
+      </p>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <label for="subject">Subject:</label>
+      <input
+        matInput
+        type="text"
+        placeholder="Subject..."
+        formControlName="subject"
+      />
+      <p class="error-msg" *ngIf="subjectInput.invalid && subjectInput.touched">
+        You have to provide a subject...
+      </p>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <label for="content">Content:</label>
+      <textarea matInput name="content" formControlName="content"></textarea>
+      <p class="error-msg" *ngIf="contentInput.invalid && contentInput.touched">
+        Please send us a message between 10-255 characters
+      </p>
+    </mat-form-field>
+
+    <button
+      mat-raised-button
+      color="accent"
+      type="submit"
+      [disabled]="contactForm.invalid"
+    >
+      Submit
+    </button>
+    <p>{{ message }}</p>
+  </form>
+</div>
