@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 
 
 const routes: Routes = [
@@ -14,9 +15,10 @@ const routes: Routes = [
     component: ContactComponent,
   },
   
-  // {
-  //   path: "**", 
-  // },
+  {
+    path: "**", 
+    component: PagenotfoundComponent,
+  },
 ];
 
 @NgModule({

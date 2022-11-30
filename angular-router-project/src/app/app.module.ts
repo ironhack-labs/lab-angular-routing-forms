@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 
 
 
@@ -17,6 +18,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     HomeComponent,
     ContactComponent,
     NavbarComponent,
+    PagenotfoundComponent,
     
   ],
   imports: [
