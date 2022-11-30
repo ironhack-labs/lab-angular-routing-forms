@@ -1,24 +1,51 @@
 <div>
     <form (ngSubmit)="onSubmit()" [formGroup]="registerForm">
+
         <div>
-            <input type="text" placeholder="Name" formControlName="name">
-            <span class="error-msg" *ngIf="nameInput.invalid && nameInput.touched">
-                Please introduce a name
-            </span>
+            <mat-form-field appearance="outline">
+                <mat-label>Name</mat-label>
+                <input matInput placeholder="Type your name" type="text" formControlName="name">
+                <mat-icon matSuffix>face</mat-icon>
+                <mat-error *ngIf="nameInput.invalid && nameInput.touched">
+                    Please introduce your name
+                </mat-error>
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field appearance="outline">
+                <mat-label>Occupation</mat-label>
+                <input matInput placeholder="Type your occupation" type="text" formControlName="occupation">
+                <mat-icon matSuffix>work_outline</mat-icon>
+                <mat-error *ngIf="occupationInput.invalid && occupationInput.touched">
+                    Please introduce your occupation
+                </mat-error>
+            </mat-form-field>
         </div>
         <div>
-            <input type="text" placeholder="Occupation" formControlName="occupation">
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="Type your email" type="email" formControlName="email">
+                <mat-icon matSuffix>alternate_email</mat-icon>
+                <mat-error *ngIf="emailInput.invalid && emailInput.touched">
+                    Please introduce your email
+                </mat-error>
+            </mat-form-field>
         </div>
         <div>
-            <input type="email" placeholder="Email" formControlName="email">
+            <mat-form-field appearance="outline">
+                <mat-label>Subject</mat-label>
+                <input matInput placeholder="Name" type="text" formControlName="subject">
+                <mat-icon matSuffix>message</mat-icon>
+                <mat-error *ngIf="subjectInput.invalid && subjectInput.touched">
+                    Please introduce the subject of your message
+                </mat-error>
+            </mat-form-field>
         </div>
-        <div>
-            <input type="text" placeholder ="Subject" formControlName="subject">
-        </div>
-        <div>
+
             <!-- this needs validations -->
-            <textarea></textarea> 
-        </div>
+        <textarea></textarea> 
+ 
         <button mat-stroked-button color="primary" type="submit" [disabled]="registerForm.invalid">Submit</button>
     </form>
 </div>
