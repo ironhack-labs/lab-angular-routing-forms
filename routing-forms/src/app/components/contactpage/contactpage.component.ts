@@ -1,3 +1,4 @@
+import { HtmlTagDefinition } from '@angular/compiler';
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms'
 
@@ -13,13 +14,9 @@ export class ContactpageComponent {
   occupationInput: FormControl;
   subjectInput: FormControl;
   contentInput: FormControl
+  textArea: any = document.querySelector('#form-textArea')
+  // inputLength: number = this.textArea.value.length
 
-  // It will have the fields name, occupation, email, subject, and content.
-  // Every field is required but occupation.
-  // Content must be a textarea field and has a minimum length of 10 and a maximum length of 255 characters.
-  // You must highlight all invalid fields and show error messages.
-  // The email must be a valid email address.
-  // After successful submission, you must show a success message and clear the form.
   constructor() {
     this.nameInput = new FormControl('', [
       Validators.required,
@@ -42,15 +39,16 @@ export class ContactpageComponent {
     this.registerForm = new FormGroup({
       name: this.nameInput,
       email: this.emailInput,
-      occupationInput: this.occupationInput,
-      subjectInput: this.subjectInput,
-      contentInput: this.contentInput
+      occupation: this.occupationInput,
+      subject: this.subjectInput,
+      content: this.contentInput
     });
   }
 
 
   onSubmit(): void {
     console.log('User created...');
+    console.log('this is the textarea', this.textArea)
     this.nameInput = new FormControl('', []);
   }
 }
