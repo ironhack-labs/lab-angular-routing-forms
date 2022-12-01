@@ -14,8 +14,12 @@ export class ContactpageComponent {
   occupationInput: FormControl;
   subjectInput: FormControl;
   contentInput: FormControl
-  textArea: any = document.querySelector('#form-textArea')
   // inputLength: number = this.textArea.value.length
+  formName: string = ''
+  formOccupation: string = ''
+  formEmail: string = ''
+  formSubject: string = ''
+  formMessage: string = ''
 
   constructor() {
     this.nameInput = new FormControl('', [
@@ -24,16 +28,16 @@ export class ContactpageComponent {
     this.subjectInput = new FormControl('', [
       Validators.required,
     ]);
-    this.occupationInput = new FormControl('', [
-      Validators.minLength(10),
-      Validators.maxLength(255),
-    ])
+    this.occupationInput = new FormControl('', []);
+
     this.emailInput = new FormControl('', [
       Validators.required,
       Validators.email
     ])
     this.contentInput = new FormControl('', [
       Validators.required,
+      Validators.minLength(10),
+      Validators.maxLength(255),
     ])
 
     this.registerForm = new FormGroup({
@@ -48,7 +52,6 @@ export class ContactpageComponent {
 
   onSubmit(): void {
     console.log('User created...');
-    console.log('this is the textarea', this.textArea)
-    this.nameInput = new FormControl('', []);
+    this.registerForm.reset()
   }
 }

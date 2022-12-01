@@ -38,15 +38,15 @@
     <form (ngSubmit)="onSubmit()" [formGroup]="registerForm">
         <mat-form-field>
             <mat-label>Name...</mat-label>
-            <input matNativeControl formControlName="name">
+            <input [(ngModel)]="formName" matNativeControl formControlName="name">
             <mat-error class="error-msg" *ngIf="nameInput.invalid && nameInput.touched">
-                Name error.....
+                Name required.....
             </mat-error>
         </mat-form-field>
 
         <mat-form-field>
             <mat-label>Occupation...</mat-label>
-            <input matNativeControl formControlName="occupation">
+            <input [(ngModel)]="formOccupation" matNativeControl formControlName="occupation">
             <mat-error class="error-msg" *ngIf="occupationInput.invalid && occupationInput.touched">
                 Occupation error.....
             </mat-error>
@@ -54,15 +54,15 @@
 
         <mat-form-field>
             <mat-label>Email...</mat-label>
-            <input matNativeControl formControlName="email">
+            <input [(ngModel)]="formEmail" matNativeControl formControlName="email">
             <mat-error class="error-msg" *ngIf="emailInput.invalid && emailInput.touched">
-                Email error.....
+                Incorrect email format.....
             </mat-error>
         </mat-form-field>
 
         <mat-form-field>
             <mat-label>Subject...</mat-label>
-            <input matNativeControl formControlName="subject">
+            <input [(ngModel)]="formSubject" matNativeControl formControlName="subject">
             <mat-error class="error-msg" *ngIf="subjectInput.invalid && subjectInput.touched">
                 Subject error.....
             </mat-error>
@@ -70,14 +70,12 @@
 
         <mat-form-field hintLabel="Max 255 characters">
             <mat-label>Your message...</mat-label>
-            <textarea id="form-textArea" formControlName="content" matInput></textarea>
-
-            <mat-error class="error-msg" *ngIf="contentInput.invalid && contentInput.touched">
-                Message error.....
+            <textarea [(ngModel)]="formMessage" formControlName="content" matInput></textarea>
+            <mat-hint align="end">{{formMessage.length || 0}}/255</mat-hint>
+            <mat-error class="erro  r-msg" *ngIf="contentInput.invalid && contentInput.touched">
+                Message too short.....
             </mat-error>
         </mat-form-field>
         <button mat-raised-button color="primary" type="submit" [disabled]="registerForm.invalid">Submit</button>
     </form>
-
-    <!-- <mat-hint>{{inputLength}}/255</mat-hint> -->
 </div>
