@@ -22,10 +22,10 @@
         <div>
             <mat-form-field appearance="outline" class="full-width">
                 <mat-label>Email</mat-label>
-                <input matInput placeholder="Type your email" type="email" formControlName="email">
+                <input matInput placeholder="Type your email" type="email" formControlName="email" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
                 <mat-icon matSuffix>alternate_email</mat-icon>
                 <mat-error *ngIf="emailInput.invalid && emailInput.touched">
-                    Please introduce your email
+                    Please introduce a valid email
                 </mat-error>
             </mat-form-field>
         </div>
@@ -44,7 +44,10 @@
         <div>
             <mat-form-field appearance="outline" class="full-width">
                 <mat-label>Textarea</mat-label>
-                <textarea matInput></textarea>
+                <textarea matInput formControlName="message" minlength="10" maxlength="255"></textarea>
+                <mat-error *ngIf="messageInput.invalid && messageInput.touched">
+                    Please introduce a message (min 10 characters long)
+                </mat-error>
 
                 <mat-hint align="end">Min 10 and max of 255 characters</mat-hint>
             </mat-form-field>

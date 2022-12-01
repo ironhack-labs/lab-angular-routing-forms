@@ -1,3 +1,4 @@
+import { formatCurrency } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms'
 
@@ -13,15 +14,17 @@ export class ContactComponent implements OnInit {
   occupationInput: FormControl;
   emailInput: FormControl;
   subjectInput: FormControl;
+  messageInput: FormControl;
 
-  // add text area?
   
   constructor(){
 
     this.nameInput = new FormControl("", Validators.required);
     this.occupationInput = new FormControl("");
+    //MAKE EMAIL REQUIRED
     this.emailInput = new FormControl("", Validators.required);
     this.subjectInput = new FormControl("", Validators.required);
+    this.messageInput = new FormControl("", Validators.required);
 
     this.registerForm = new FormGroup(
       {
@@ -29,6 +32,7 @@ export class ContactComponent implements OnInit {
         occupation: this.occupationInput,
         email: this.emailInput,
         subject: this.subjectInput,
+        message: this.messageInput,
       }
     )
   }
@@ -36,6 +40,11 @@ export class ContactComponent implements OnInit {
   ngOnInit(): void {}
 
   onSubmit(): void {
-    console.log("Contact request sent");
+    alert("Thanks for contacting us");
+    this.registerForm.reset()
+    for (let field in this.registerForm.controls) {
+      this.registerForm.controls[field].clearValidators();
+      this.registerForm.controls[field].updateValueAndValidity();
+    }
   }
 }
