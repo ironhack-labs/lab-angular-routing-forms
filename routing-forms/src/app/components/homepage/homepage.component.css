@@ -1,3 +1,7 @@
+div {
+    padding: 30px;
+}
+
 img {
     width: 200px;
     height: 200px;
@@ -20,7 +24,7 @@ mat-card-actions {
     padding: 30px;
     margin: auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 h2 {

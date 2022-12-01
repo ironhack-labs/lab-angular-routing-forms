@@ -12,7 +12,7 @@ export class HomepageComponent {
   project: any
   constructor() {
     this.prj1 = false
-    this.prj2 = false
+    this.prj2 = true
     this.prj3 = false
     this.project = document.querySelector('bottom')
   }
