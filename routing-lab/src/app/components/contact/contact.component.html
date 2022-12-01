@@ -1,0 +1,47 @@
+<div class="main-contact-box">
+  <form (ngSubmit)="onSubmit()" [formGroup]="contactForm">
+    <div>
+      <h1>Contact us</h1>
+      <mat-form-field>
+        <input matNativeControl type="text"  placeholder="Name..." formControlName="name" />
+        <mat-error class="error-msg" *ngIf="nameInput.invalid && nameInput.touched">
+          Name is <strong>required</strong>
+        </mat-error>  
+      </mat-form-field>
+      
+
+        <mat-form-field>
+          <mat-label>Occupation</mat-label>
+          <input type="text" matNativeControl placeholder="Occupation..." formControlName="occupation" />
+        </mat-form-field>
+          <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input type="email" matNativeControl formControlName="email" placeholder="Ex. pat@example.com">
+        <mat-error *ngIf="contactForm.hasError('email') && !contactForm.hasError('required')">
+          Email is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+        <mat-form-field>
+          <select matNativeControl formControlName="subject">
+            <option value="" invalid>Select a subject</option>
+            <option *ngFor="let subject of subjects" [value]="subject">
+              {{ subject | titlecase }}
+            </option>
+          </select>
+          <mat-error class="error-msg" *ngIf="subjectInput.invalid && subjectInput.touched">
+            Subject is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Message</mat-label>
+            <textarea matNativeControl formControlName="content" rows="10"></textarea>
+            <mat-error class="error-msg" *ngIf="contentInput.invalid && contentInput.touched">
+              Please, write a message between 10 and 255 characters
+            </mat-error>
+        </mat-form-field>
+      <button mat-raised-button type="submit" [disabled]="contactForm.invalid">Submit</button>
+    </div>
+  </form>
+</div>

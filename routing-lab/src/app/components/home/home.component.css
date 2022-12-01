@@ -1,0 +1,35 @@
+.home-page-box {
+    width: 80%;
+    height: auto;
+    margin: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+    font-family: cursive;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    border-radius: 80%;
+}
+
+li {
+    list-style: none;
+    text-indent: -50px;
+}
+
+h2 {
+    margin-top: 5%;
+    font-size: 2em;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+a {
+    text-decoration: none;
+}
