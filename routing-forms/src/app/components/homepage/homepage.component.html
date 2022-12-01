@@ -1,0 +1,58 @@
+<div>
+    <mat-card>
+        <mat-card-content>
+            <mat-card-header>
+                <h2>José Luis</h2>
+            </mat-card-header>
+            <img mat-card-image
+                src="https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fHByb2ZpbGUlMjBwaWMlMjBtZW1lfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores inventore esse hic architecto veniam
+                fuga odit. Eaque maiores deserunt, harum temporibus perspiciatis facere nobis ut voluptate ullam, ad
+                provident dolore!</p>
+            <p><strong>Skils:</strong> HTML, CSS, JS, Angular</p>
+            <mat-card-footer>
+                <mat-card-actions>
+                    <mat-chip-listbox aria-label="Fish selection">
+                        <mat-chip-option (click)="showPrj1()">Project 1</mat-chip-option>
+                        <mat-chip-option (click)="showPrj2()" color="accent" selected>Project 2</mat-chip-option>
+                        <mat-chip-option (click)="showPrj3()" color="warn">Project 3</mat-chip-option>
+                    </mat-chip-listbox>
+                </mat-card-actions>
+            </mat-card-footer>
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card *ngIf="prj1" class="show">
+        <mat-card-content>
+            <mat-card-header>
+                <h3>Project 1</h3>
+            </mat-card-header>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores inventore esse hic architecto veniam
+                fuga odit. Eaque maiores deserunt, harum temporibus perspiciatis facere nobis ut voluptate ullam, ad
+                provident dolore!</p>
+            <p><strong>Skils Used:</strong> HTML, CSS</p>
+        </mat-card-content>
+    </mat-card>
+    <mat-card *ngIf="prj2" class="show">
+        <mat-card-content>
+            <mat-card-header>
+                <h3>Project 2</h3>
+            </mat-card-header>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores inventore esse hic architecto veniam
+                fuga odit. Eaque maiores deserunt, harum temporibus perspiciatis facere nobis ut voluptate ullam, ad
+                provident dolore!maiores deserunt, harum temporibus perspiciatis facere nobis ut voluptate ullam, ad
+                provident dolore!</p>
+            <p><strong>Skils Used:</strong> NodeJS, JS</p>
+        </mat-card-content>
+    </mat-card>
+    <mat-card *ngIf="prj3" class="show">
+        <mat-card-content>
+            <mat-card-header>
+                <h3>Project 3</h3>
+            </mat-card-header>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores inventore esse hic architecto veniam
+                fuga odit. Eaque maiores deserunt, harum</p>
+            <p><strong>Skils Used:</strong> ReactJS, JS, CSS</p>
+        </mat-card-content>
+    </mat-card>
+</div>

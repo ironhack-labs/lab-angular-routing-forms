@@ -1,0 +1,41 @@
+div {
+    padding: 30px;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+    border-radius: 150px;
+}
+
+mat-card-content {
+    text-align: center;
+}
+
+mat-card-header,
+p {
+    width: 300px;
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+}
+
+mat-card-actions {
+    padding: 30px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+h2 {
+    margin: auto;
+}
+
+mat-card {
+    width: 500px;
+    margin: 50px auto 30px;
+}
+
+button {
+    width: 100px;
+}
