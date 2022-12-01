@@ -1,6 +1,6 @@
-import { HtmlTagDefinition } from '@angular/compiler';
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms'
+import { MatSnackBar, MatSnackBarVerticalPosition, } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-contactpage',
@@ -14,14 +14,15 @@ export class ContactpageComponent {
   occupationInput: FormControl;
   subjectInput: FormControl;
   contentInput: FormControl
-  // inputLength: number = this.textArea.value.length
   formName: string = ''
   formOccupation: string = ''
   formEmail: string = ''
   formSubject: string = ''
   formMessage: string = ''
+  success: boolean = false
+  // verticalPosition: MatSnackBarVerticalPosition = 'bottom'
 
-  constructor() {
+  constructor(private _snackBar: MatSnackBar) {
     this.nameInput = new FormControl('', [
       Validators.required,
     ]);
@@ -49,9 +50,17 @@ export class ContactpageComponent {
     });
   }
 
+  //This would not close even though it should so I use a normal success message
+  openSnackBar(message: string, action: string) {
+    //   this._snackBar.open(message, action, {
+    //     verticalPosition: this.verticalPosition,
+    //     duration: 3000,
+    //   });
+  }
 
   onSubmit(): void {
-    console.log('User created...');
     this.registerForm.reset()
+    console.log('User created...');
+    console.log(this.success);
   }
 }

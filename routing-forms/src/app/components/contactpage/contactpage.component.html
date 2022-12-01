@@ -1,40 +1,4 @@
 <div class="container">
-    <!-- <form (ngSubmit)="onSubmit()" [formGroup]="registerForm">
-        <div>
-            <input type="text" placeholder="Name..." formControlName="name" />
-            <p class="error-msg" * ngIf="nameInput.invalid && nameInput.touched">
-                Name error.....
-            </p>
-        </div>
-        <div>
-            <label>Occupation</label>
-            <input type="text" placeholder="Occupation..." formControlName="occupation" />
-            <p class="error-msg" * ngIf="occupationInput.invalid && occupationInput.touched">
-                Occupation error.....
-            </p>
-        </div>
-        <div>
-            <label>Email</label>
-            <input matInput type="text" placeholder="Email..." formControlName="email" />
-            <p class="error-msg" *ngIf="emailInput.invalid && emailInput.touched">
-                Email error.....
-            </p>
-        </div>
-        <div>
-            <input type="text" placeholder="Subject..." formControlName="subject" />
-            <p class="error-msg" * ngIf="subjectInput.invalid && subjectInput.touched">
-                Subject error.....
-            </p>
-        </div>
-        <div>
-            <textarea type="text" placeholder="Content..." formControlName="content" cols="30" rows="10"></textarea>
-            <p class="error-msg" * ngIf="contentInput.invalid && contentInput.touched">
-                Content error.....
-            </p>
-        </div>
-        <button type="submit">Submit</button>
-
-    </form> -->
     <form (ngSubmit)="onSubmit()" [formGroup]="registerForm">
         <mat-form-field>
             <mat-label>Name...</mat-label>
@@ -70,12 +34,18 @@
 
         <mat-form-field hintLabel="Max 255 characters">
             <mat-label>Your message...</mat-label>
-            <textarea [(ngModel)]="formMessage" formControlName="content" matInput></textarea>
+            <textarea maxlength="255" [(ngModel)]="formMessage" formControlName="content" matInput></textarea>
             <mat-hint align="end">{{formMessage.length || 0}}/255</mat-hint>
             <mat-error class="erro  r-msg" *ngIf="contentInput.invalid && contentInput.touched">
                 Message too short.....
             </mat-error>
         </mat-form-field>
-        <button mat-raised-button color="primary" type="submit" [disabled]="registerForm.invalid">Submit</button>
+
+        <p *ngIf="success === true" class="msgSuccess">Success!</p>
+
+        <button mat-raised-button (click)="this.success = true" (click)="openSnackBar('Success', '')" color="primary"
+            type="submit" [disabled]="registerForm.invalid">Submit</button>
+
     </form>
+    <!--  -->
 </div>

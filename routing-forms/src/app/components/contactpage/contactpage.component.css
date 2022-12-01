@@ -8,3 +8,9 @@ form {
 mat-form-field {
     width: 400px;
 }
+
+.msgSuccess {
+    text-align: center;
+    font-size: 2vw;
+    color: blue;
+}
