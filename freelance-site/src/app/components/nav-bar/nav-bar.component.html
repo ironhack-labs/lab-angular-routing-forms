@@ -1,0 +1,14 @@
+<nav>
+
+    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+    <mat-menu #menu="matMenu">
+      <a mat-menu-item
+        routerLink="/"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact: true}">Home</a>
+      <a mat-menu-item
+        routerLink="/contact"
+        routerLinkActive="active">Contact</a>
+    </mat-menu>
+
+</nav>
