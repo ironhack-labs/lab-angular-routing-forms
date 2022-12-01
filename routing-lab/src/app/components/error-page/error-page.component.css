@@ -1,0 +1,20 @@
+body {
+    display: flex;
+    background-image: url('https://i.pinimg.com/originals/d7/52/f4/d752f4874d0f1eafdacee0abad79522a.jpg');
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-left: 10%;
+    height: 100%;
+    width: 100%;
+
+}
+
+h1 {
+    font-size: 2rem;
+    position: relative;
+    left: 13%;
+    top:20%;
+    font-family: cursive;
+}
+    

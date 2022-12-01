@@ -1,0 +1,14 @@
+.main-contact-box {
+    width: 100%;
+    display: flex;
+ 
+
+    margin-top: 10%;
+    margin-left: 17%;
+    padding-bottom: 10%;
+
+}
+
+mat-form-field, textarea, button, select{
+    width: 80%;
+}
