@@ -1,13 +1,18 @@
-<nav>
-  <ul>
-    <li>
-      <a
-        routerLink="/"
-        routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: true }"
-        >Home</a
-      >
-    </li>
-    <li><a routerLink="/contact" routerLinkActive="active">contact</a></li>
-  </ul>
-</nav>
+<mat-toolbar color="primary">
+  <span>Portafolio</span>
+  <div class="spacer"></div>
+  <nav>
+    <a
+      class="link"
+      mat-button
+      routerLink="/"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      >Home</a
+    >
+
+    <a class="link" mat-button routerLink="/contact" routerLinkActive="active"
+      >contact</a
+    >
+  </nav>
+</mat-toolbar>

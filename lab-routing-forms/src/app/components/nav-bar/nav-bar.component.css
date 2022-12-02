@@ -1,0 +1,17 @@
+li {
+  list-style: none;
+}
+.mat-toolbar {
+  background-color: #1268be;
+  color: white;
+}
+nav .link {
+  color: white;
+}
+.spacer {
+  flex: 1 1 auto;
+}
+
+.routerLinkActive {
+  color: #fff;
+}
