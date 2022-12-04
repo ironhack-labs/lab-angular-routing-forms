@@ -1,0 +1,40 @@
+#home-page {
+    display: flex;
+    flex-direction: column;    
+    align-items: center;
+    margin-left: 20vw;
+    margin-right: 20vw;
+}
+img {
+    max-width: 20vw;    
+}
+
+.home-page-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.home-page-body p{
+    padding-left: 1vw;
+    justify-content: space-around;
+}
+
+.img-p {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-left: 10%;
+    padding-right: 15%;
+}
+
+.home-page-body h2, ul, li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+

@@ -1,0 +1,73 @@
+<div class="container">
+  <form (ngSubmit)="onSubmit()" [formGroup]="registerForm">
+    <mat-form-field appearance="fill">
+      <label for="name">Name</label>
+      <input
+        matInput
+        type="text"
+        placeholder="Name..."
+        formControlName="name"
+      />
+      <p class="error-msg" *ngIf="completeNameInput.invalid && completeNameInput.touched">
+        Provides a correct name
+      </p>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <label for="occupation">Occupation</label>
+      <input
+        matInput
+        type="text"
+        placeholder="Ocupation..."
+        formControlName="occupation"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <label for="email">Email</label>
+      <input
+        matInput
+        type="text"
+        placeholder="Email..."
+        formControlName="email"
+      />
+      <p class="error-msg" *ngIf="emailInput.invalid && emailInput.touched">
+        Provides a correct email
+      </p>
+    </mat-form-field>
+
+
+    <mat-form-field appearance="fill">
+      <label for="subject">Subject</label>
+      <input
+        matInput
+        type="text"
+        placeholder="Subject..."
+        formControlName="subject"
+      />
+      <p class="error-msg" *ngIf="subjectInput.invalid && subjectInput.touched">
+        Provides a correct subject
+      </p>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <label for="content">Content</label>
+      <textarea matInput name="content" formControlName="content"></textarea>
+      <p class="error-msg" *ngIf="contentInput.invalid && contentInput.touched">
+        The message must have a minimum of ten characters and a maximum of 255
+      </p>
+    </mat-form-field>
+
+    <div></div>
+    <button
+      mat-raised-button
+      color="primary"
+      (reset)="(registerForm)"
+      type="submit"
+      [disabled]="registerForm.invalid"
+    >
+      Submit
+    </button>
+    <p onsubmit="onSubmit()">{{succesMessage}}</p>
+  </form>
+</div>

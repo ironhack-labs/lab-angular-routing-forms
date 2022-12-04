@@ -1,0 +1,27 @@
+#nav-bar {
+    display: flex;
+    flex-direction: column;    
+    align-items: center;    
+}
+
+#nav-bar ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;    
+}
+
+#nav-bar li {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-decoration: none;
+    padding: 1vw;
+}
+
+#nav-bar a {
+    display: flex;
+    flex-direction: row;
+    justify-items: space-between;
+    text-decoration: none;
+}
+
