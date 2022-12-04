@@ -1,0 +1,20 @@
+<h1>let's kEEp in toucH</h1>
+<form id="grid" (ngSubmit)="onSubmit($event)"  [formGroup]="registerForm">
+    <input placeholder="Fullname*" formControlName="name"
+        [ngClass]="{ badInput: name.invalid && name.touched }"
+    >
+
+    <input placeholder="Email*" formControlName="email"
+        [ngClass]="{ badInput: email.invalid && email.touched }"
+    >
+    <input placeholder="Occupation" formControlName="occupation"
+        [ngClass]="{ badInput: occupation.invalid && occupation.touched }"
+    >
+    <input placeholder="subJect*" formControlName="subject"
+        [ngClass]="{ badInput: subject.invalid && subject.touched }"
+    >
+    <textarea placeholder="Start typing...*" formControlName="content"
+        [ngClass]="{ badInput: content.invalid && content.touched }"
+    ></textarea>
+    <button [disabled]="registerForm.invalid">Submit</button>
+</form>

@@ -1,0 +1,59 @@
+* {
+    border: none; 
+    outline: none; 
+}
+
+:host {
+    height: 100%;
+    width: 100%;
+}
+h1 {
+    height: 50px;
+    font-weight: 400;
+    font-size: 2rem;
+    margin-block: 30px; 
+}
+
+#grid {
+    height: calc(100% - 170px);
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50px 50px 1fr 50px;
+    column-gap: 20px;
+    row-gap: 20px;
+}
+
+input {
+    border-radius: 5px;
+    padding: 10px; 
+    background-color: #ececec;
+}
+
+textarea {
+    border-radius: 5px;
+    background-color: #ececec;
+    grid-column: 1 / span 2;
+    padding: 10px; 
+    resize: none;
+}
+
+button {
+    border-radius: 5px;
+    grid-column: 1 / span 2;
+    transition: all .15s ease-in-out;
+}
+
+button:hover {
+    background-color: #000; 
+    color: #fff; 
+    cursor: pointer;
+}
+
+*:focus {
+    box-shadow: 0px 0px 1px #000;
+}
+
+.badInput {
+    background-color: rgb(240, 12, 12);
+}
