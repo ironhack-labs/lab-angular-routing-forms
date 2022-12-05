@@ -1,13 +1,14 @@
-<nav>
-  <ul>
-    <li>
-      <a
+<mat-toolbar class="navbar">
+  <div>Daniela Trinchera</div>
+  <div>
+    <span
+      ><a
         routerLink="/"
         routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: true }"
         >Home</a
-      >
-    </li>
-    <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
-  </ul>
-</nav>
+      ></span
+    >
+    <span><a routerLink="/contact" routerLinkActive="active">Contact</a></span>
+  </div>
+</mat-toolbar>
