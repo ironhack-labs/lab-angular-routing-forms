@@ -40,5 +40,10 @@ export class ContactPageComponent {
   onSubmit(): void {
     console.log('User created...');
     this.isValid = true;
+    this.registerForm.reset();
+    for (let field in this.registerForm.controls) {
+      this.registerForm.controls[field].clearValidators();
+      this.registerForm.controls[field].updateValueAndValidity();
+    }
   }
 }
