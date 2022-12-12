@@ -1,0 +1,94 @@
+<div id="contact">
+  <div class="img-container">
+    <img
+      id="img-back"
+      src="https://www.luisan.net/blog/wp-content/uploads/2014/09/color_small_mk-e1549454603143.png"
+      alt="landing picture"
+    />
+    <div class="centered-text">
+      <span class="centered-title">Please text me</span> <br />
+      <br />
+      <span class="centered-subtitle"
+        >For any doubt, or collaboration opportunity you may have for me.</span
+      >
+      <br />
+    </div>
+  </div>
+  <form (ngSubmit)="onSubmit()" [formGroup]="registerForm">
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input
+        type="text"
+        matInput
+        formControlName="name"
+        placeholder="Enter your name..."
+      />
+      <mat-error
+        class="error-msg"
+        *ngIf="nameInput.invalid && nameInput.touched"
+      >
+        Name error.....
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Occupation</mat-label>
+      <input
+        type="text"
+        matInput
+        formControlName="occupation"
+        placeholder="occupation..."
+      />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input
+        type="text"
+        matInput
+        formControlName="email"
+        placeholder="Enter your email..."
+      />
+      <mat-error
+        class="error-msg"
+        *ngIf="emailInput.invalid && emailInput.touched"
+      >
+        Email error.....
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Subject</mat-label>
+      <input
+        type="text"
+        matInput
+        formControlName="subject"
+        placeholder="subject..."
+      />
+      <mat-error
+        class="error-msg"
+        *ngIf="subjectInput.invalid && subjectInput.touched"
+      >
+        subject is required.....
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Content</mat-label>
+      <textarea
+        type="text"
+        matInput
+        formControlName="content"
+        placeholder="write your message..."
+      ></textarea>
+      <mat-error
+        class="error-msg"
+        *ngIf="contentInput.invalid && contentInput.touched"
+      >
+        content is required, between 10 and 255 characters.....
+      </mat-error>
+    </mat-form-field>
+    <button mat-raised-button type="submit" [disabled]="registerForm.invalid">
+      Submit
+    </button>
+  </form>
+  <div class="success" *ngIf="isValid && !registerForm.invalid">
+    I'll be in touch ASAP! Thanks for reaching out
+  </div>
+</div>
