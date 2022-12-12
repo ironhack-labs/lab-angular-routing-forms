@@ -1,0 +1,84 @@
+<div class="container">
+  <form
+    class="formContainer"
+    [formGroup]="registerForm"
+    (ngSubmit)="onSubmit()"
+  >
+    <mat-form-field appearance="outline" class="input_container">
+      <mat-label>Name</mat-label>
+      <input
+        type="text"
+        matInput
+        placeholder="Name"
+        formControlName="name"
+        class="inputs"
+      />
+      <mat-error *ngIf="nameInput.invalid && nameInput.touched">
+        Please enter a valid name, with more than 6 characters
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="input_container">
+      <mat-label>Email</mat-label>
+      <input
+        type="email"
+        matInput
+        placeholder="Ex. pat@example.com"
+        formControlName="email"
+        class="inputs"
+      />
+      <mat-error *ngIf="emailInput.invalid && emailInput.touched">
+        Please enter a valid email
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="input_container">
+      <mat-label>Occupation</mat-label>
+      <input
+        type="text"
+        matInput
+        placeholder="Occupation"
+        formControlName="occupation"
+        class="inputs"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="input_container">
+      <mat-label>Subject</mat-label>
+      <input
+        type="text"
+        matInput
+        placeholder="Bubject"
+        formControlName="subject"
+        class="inputs"
+      />
+      <mat-error *ngIf="subjectInput.invalid && subjectInput.touched">
+        Please enter a subject
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="input_container">
+      <mat-label>Leave a comment</mat-label>
+      <textarea
+        matInput
+        placeholder="Ex. It makes me feel..."
+        formControlName="content"
+        class="inputs"
+      ></textarea>
+      <mat-error *ngIf="contentInput.invalid && contentInput.touched">
+        Please enter a message with more than 10 characters
+      </mat-error>
+    </mat-form-field>
+
+    <button
+      mat-raised-button
+      color="primary"
+      [disabled]="registerForm.invalid || !registerForm.valid"
+    >
+      Submit form
+    </button>
+    <div *ngIf="succesfulMessage != ''" class="success_messsage">
+      {{ succesfulMessage }}
+    </div>
+  </form>
+</div>
